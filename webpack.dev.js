@@ -25,6 +25,9 @@ module.exports = {
             }
         ]
     },
+    node: {
+        fs: 'empty'
+      },
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",

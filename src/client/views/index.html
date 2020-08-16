@@ -3,11 +3,13 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
+        <!--
         <link rel="stylesheet" href="/styles/resets.css">
         <link rel="stylesheet" href="/styles/base.css">
         <link rel="stylesheet" href="/styles/header.css">
         <link rel="stylesheet" href="/styles/form.css">
         <link rel="stylesheet" href="/styles/footer.css">
+    -->
     </head>
 
     <body>
@@ -23,12 +25,31 @@
 
         <main>
             <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <h2>Input url for website you'd like to analyze: </h2>
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="URL">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
+                    <p>Sentiment Analysis involves extracting connotative meaning from human language using Natural Language Processing via Machine Learning.</p>
+
+                    <p>This website uses MeaningClouds's Sentiment Analysis API which infers meaning from written language by:</p>
+                     <ol>
+                        <li>Extracting aspect-based sentiment.</li> 
+                        <li>Distinguishing facts and opinions.</li> 
+                        <li>Detecting irony and polarity disagreement.</li>
+                     </ol>
+                     <!--https://www.meaningcloud.com/developer/sentiment-analysis#:~:text=Sentiment%20Analysis%20is%20MeaningCloud's%20solution,document%20or%20aspect%2Dbased%20level.-->
+            </section>
+               
             <section>
+                <!--method="POST" action="/test"
+                onsubmit="return handleSubmit(event)
+            onsubmit="return Client.handleSubmit(event)"
+        onclick="return Client.handleSubmit(event)"
+    -->
+                 <form class="" method="POST" action="/test">
+                    <h2>Input the url for a website you'd like to analyze: </h2>
+                    <input type="text" id="userInput"  name="input" value="" placeholder="URL" onkeyup="return Client.checkValidURL()" onpaste="return Client.checkValidURL()">
+                    <div id="validate"></div>
+                    <input type="submit" id="submit" name="" value="submit" onsubmit="return Client.handleSubmit(event)">
+                    <button id="retrieve" onclick="return Client.updateUI()">Get Results</button>
+                </form>
+            </section>
 
             <section>
                 <strong>Form Results:</strong>
