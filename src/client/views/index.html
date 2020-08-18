@@ -2,52 +2,41 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
-        <!--
-        <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css">
-    -->
+        <title>Natural Language Processing</title>
     </head>
 
     <body>
 
         <header>
-            <div class="">
-                Logo
+            <div class="logo">
+                logo
             </div>
-            <div class="">
+            <div class="nav">
                 navigation
             </div>
         </header>
 
         <main>
-            <section>
-                    <p>Sentiment Analysis involves extracting connotative meaning from human language using Natural Language Processing via Machine Learning.</p>
+            <section class="intro">
+                    <p class="sentiment">Sentiment Analysis involves extracting connotative meaning from human language using Natural Language Processing via Machine Learning.</p>
 
-                    <p>This website uses MeaningClouds's Sentiment Analysis API which infers meaning from written language by:</p>
+                    <p class="list__head">This website uses MeaningClouds's Sentiment Analysis API which infers meaning from written language by:</p>
                      <ol>
                         <li>Extracting aspect-based sentiment.</li> 
                         <li>Distinguishing facts and opinions.</li> 
                         <li>Detecting irony and polarity disagreement.</li>
                      </ol>
-                     <!--https://www.meaningcloud.com/developer/sentiment-analysis#:~:text=Sentiment%20Analysis%20is%20MeaningCloud's%20solution,document%20or%20aspect%2Dbased%20level.-->
             </section>
                
             <section>
-                <!--method="POST" action="/test"
-                onsubmit="return handleSubmit(event)
-            onsubmit="return Client.handleSubmit(event)"
-        onclick="return Client.handleSubmit(event)"
-    -->
                  <form class="" method="POST" action="/test">
-                    <h2>Input the url for a website you'd like to analyze: </h2>
+                    <h2>input the url for a website you'd like to analyze: </h2>
                     <input type="text" id="userInput"  name="input" value="" placeholder="URL" onkeyup="return Client.checkValidURL()" onpaste="return Client.checkValidURL()">
                     <div id="validate"></div>
-                    <input type="submit" id="submit" name="" value="submit" onsubmit="return Client.handleSubmit(event)">
-                    <button id="retrieve" onclick="return Client.updateUI()">Get Results</button>
+                    <div class="buttons">
+                        <input type="submit" id="submit" name="" value="submit" onsubmit="return Client.handleSubmit(event)">
+                        <button id="retrieve" onclick="return Client.updateUI()">get results</button>
+                    </div>
                 </form>
             </section>
 
@@ -58,8 +47,18 @@
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <p>created by: Justin R. &copy; 2020</p>
         </footer>
+
+        <script>
+                // Check that service workers are supported
+                if ('serviceWorker' in navigator) {
+                    // Use the window load event to keep the page load performant
+                    window.addEventListener('load', () => {
+                        navigator.serviceWorker.register('/service-worker.js');
+                    });
+                }
+        </script>
 
     </body>
 </html>

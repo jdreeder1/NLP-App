@@ -9,8 +9,6 @@ import './styles/form.scss'
 import './styles/footer.scss'
 import './styles/header.scss'
 
-alert('I exist!')
-
 //export so that webpack can add it to the Client library
 export { 
     checkValidURL,

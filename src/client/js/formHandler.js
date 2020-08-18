@@ -1,13 +1,3 @@
-/*
-The callback function on the post route in express server will have a fetch request for the meaningcloud API. So, if your endpoint is named '/analyzeUrl':
-
-The frontend JS code would do a POST request to express server with endpoint '/analyzeUrl'.
-The express server would accept the POST request for '/analyzeUrl'
-The express server would then call the callback function that sends the URL to meaningcloud API for analysis. It would require the API keys at this point.
-The express server would then get the response from the API and send it back to frontend JS
-The frontend code would then output the response on the HTML page.
-*/
-
 const userInput = document.getElementById('userInput');
 const validate = document.getElementById('validate');
 const submit = document.getElementById('submit');
@@ -23,7 +13,7 @@ const retrieve = document.getElementById('retrieve');
     '(\\#[-a-z\\d_]*)?$','i');
     return pattern.test(myURL);
  };
-
+//verfies user enters website url in valid format
  const checkValidURL = () => {
      let text = userInput.value;
     if(validateURL(text) == false){
@@ -39,27 +29,27 @@ const retrieve = document.getElementById('retrieve');
         retrieve.style.pointerEvents = 'auto';
     }
  }
-
+//posts url input by user to local server
 const sendData = async (url = '', data) => {
 
     fetch(url, {
         method: 'POST',
-        body: data, //JSON.stringify(data),
-    }).then((response) => {return response.text()})
-    .then((text) => {console.log(text)})
-    .catch((error) => {console.log(error)})
+        body: data, 
+    })
+    .catch(error => {
+        console.log(error)
+    })
 }
-
-//ADD FORM VALIDATION!!!
+//posts user input url to server on submit
 const handleSubmit = async (e) => {
     const formData = new FormData(this);
 
-    sendData('/test', formData);
-        
+    sendData('/test', formData);        
 
 };
 
 export {
+    validateURL,
     checkValidURL,
     handleSubmit,
     sendData

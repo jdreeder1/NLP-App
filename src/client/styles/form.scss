@@ -1,13 +1,37 @@
 form {
-    border: 1px solid #545454;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid dimgray;
     border-radius: 3px;
+    background-color: dimgray; 
     padding: 40px;
+    text-align: center;
+    h2 {
+        font-size: 1.2em;
+    }
 }
 
-input {
-    padding: 5px 20px;
+#userInput {
     width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
+    margin-top: 40px;
 }
 
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#validate {
+    position: absolute;
+    margin: 10px 0 10px 0;
+}
+
+#submit, #retrieve {
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    background-color: black;
+    color: whitesmoke; 
+    padding: 12px 20px;
+    margin-top: 40px;
+}
