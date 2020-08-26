@@ -33,11 +33,14 @@ This project uses numerous dependencies, including:
   }
 ```
 
-To install these dependencies, download NPM and clone this repository. Make sure you're in the same file directory you cloned this repo to in either a NPM or Git Command Terminal, then type `npm install` to install the above dependencies. 
+- To install these dependencies, download NPM and clone this repository. Make sure you're in the same file directory you cloned this repo to in either a NPM or Git Command Terminal, then type `npm install` to install the above dependencies. 
+- To use this app, you need to have an API key from MeaningCloud for Sentiment Analysis. Click this [link](https://www.meaningcloud.com/developer/getting-started) to setup an account with MeaningCloud to get an API key. Click this [link](https://www.meaningcloud.com/developer/sentiment-analysis/doc) to learn more about MeaningCloud's Sentiment Analysis API.
 
 ## Usage
+- Find the server-side index file by navigating through the `src` then `server` folders and opening the `index.js` file. 
+- Store your MeaningCloud API key as a variable in the `index.js` file. Replace the `process.env.API_KEY` variable in line 36 with the variable name you used to store your API key.  
 - Make sure you're in the same file directory you cloned this repo to in either a NPM or Git Command Terminal and type `npm run build-prod` (this will cause Webpack to create a 'dist' folder, effectively building the production environment for this app).  
 - Type `npm run start` in the same Command Terminal in the same directory as the previous step to setup a local server. 
 - Open your preferred browser and type `localhost:3030` in the address bar and hit enter. 
-- Type or copy/paste a valid http or https URL into the provide text area then click 'submit'.
+- Type or copy/paste a valid http or https URL into the provided text area then click 'submit'.
 - Click 'get results' to reveal what MeaningCloud's Sentiment Analysis API gleaned about the text content on the website you entered.
